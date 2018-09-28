@@ -2,6 +2,7 @@
 
 import scrapy
 import time
+from wallpapers.items import WallpapersItem
 
 
 class WallpapersSpidersCls(scrapy.Spider):
@@ -59,9 +60,12 @@ class WallpapersSpidersCls(scrapy.Spider):
 
     def parse_item(self, response):
         sel = scrapy.Selector(response)
+        wallpItem = WallpapersItem()
         imgs = sel.xpath('//p[@id="main-pic"]/img[@class="hor"]/@src').extract()
         for img in imgs:
-            print("url_here")
+            # print("url_here")
             img_url = "https://wallpapershome.com{0}".format(img)
             print("img_url:" + img_url)
+            wallpItem["url"] = img_url
+            yield wallpItem
         pass
