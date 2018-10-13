@@ -88,3 +88,9 @@ ROBOTSTXT_OBEY = True
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# ----------- selenium参数配置 -------------
+SELENIUM_TIMEOUT = 25           # selenium浏览器的超时时间，单位秒
+LOAD_IMAGE = True               # 是否下载图片
+WINDOW_HEIGHT = 900             # 浏览器窗口大小
+WINDOW_WIDTH = 900
